@@ -1,5 +1,9 @@
 import subprocess
 import urllib
+try:
+  urllib.request
+except AttributeError:
+  import urllib2 as urllib
 req = urllib.request.urlopen('https://www.gitignore.io/api/node')
 subprocess.call(['git', 'init'])
 with open('.gitignore', 'w') as f:
