@@ -34,6 +34,16 @@ To create a new Textile-based react project, simply call:
 cookiecutter gh:textileio/textile-react-cookie
 ```
 
+Then its simply a matter of:
+
+```sh
+cd appname
+yarn install
+yarn start
+```
+
+Now you can start editing the app code and making it your own. Check out the generated `README.md` file for details.
+
 ## Maintainer
 
 [Carson Farmer](https://github.com/carsonfarmer)
