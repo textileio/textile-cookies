@@ -1,17 +1,8 @@
 import subprocess
-import urllib
-try:
-  urllib.request
-except AttributeError:
-  import urllib2 as urllib
-req = urllib.request.urlopen('https://www.gitignore.io/api/node')
+
 subprocess.call(['git', 'init'])
-with open('.gitignore', 'w') as f:
-  f.write(req.read())
 subprocess.call(['git', 'add', '*'])
-subprocess.call([
-    'git', 'commit', '-m', 'Initial commit'
-])
+subprocess.call(['git', 'commit', '-m', 'Initial commit'])
 subprocess.call(
     [
         'git',
@@ -21,3 +12,6 @@ subprocess.call(
         'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.appname}}.git'
     ]
 )
+print("Git repo initialized, consider running:")
+print("curl -sL https://www.gitignore.io/api/node > .gitignore")
+print("to add a useful .gitignore file!")
