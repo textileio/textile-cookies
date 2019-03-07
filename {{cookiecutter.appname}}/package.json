@@ -69,6 +69,7 @@
       "output": "dist"
     },
     "mac": {
+      "category": "public.app-category.utilities",
       "icon": "assets/icon.icns",
       "type": "distribution",
       "target": [
@@ -81,6 +82,7 @@
       "target": "nsis"
     },
     "linux": {
+      "category": "Network",
       "icon": "assets/icon.png",
       "target": [
         "snap",
