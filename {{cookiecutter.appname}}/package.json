@@ -7,7 +7,7 @@
   "license": "{{cookiecutter.license}}",
   "dependencies": {
     "@craco/craco": "^3.5.0",
-    "@textileio/js-http-client": "^0.1.7",
+    "@textileio/js-http-client": "^0.1.8",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "moment": "^2.24.0",
