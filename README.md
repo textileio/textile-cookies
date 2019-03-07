@@ -1,9 +1,9 @@
-# Textile React Cookiecutter Template _(textile-react-cookie)_
+# Textile Cookiecutter Templates _(textile-cookies)_
 
 [![Made by Textile](https://img.shields.io/badge/made%20by-Textile-informational.svg?style=popout-square)](https://textile.io)
 [![Chat on Slack](https://img.shields.io/badge/slack-slack.textile.io-informational.svg?style=popout-square)](https://slack.textile.io)
 
-> Official Textile React Cookiecutter Template
+> Official Textile Cookiecutter Templates
 
 Join us on our [public Slack channel](https://slack.textile.io/) for news, discussions, and status updates.
 
@@ -28,11 +28,13 @@ sudo apt-get install cookiecutter # Debian/Ubuntu
 
 ## Usage
 
-To create a new Textile-based react project, simply call:
+To create a new Textile-based project, simply call:
 
 ```sh
-cookiecutter gh:textileio/textile-react-cookie
+cookiecutter gh:textileio/textile-cookies
 ```
+
+By default, this will create a React app. You can also specify one of our templates directly via the `--checkout` flag (`react` or `electron`).
 
 Then its simply a matter of:
 
