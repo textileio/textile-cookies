@@ -2,7 +2,7 @@
   "name": "{{cookiecutter.appname}}",
   "version": "{{cookiecutter.version}}",
   "description": "{{cookiecutter.description}}",
-  "main": "src/{{cookiecutter.entry_point}}", 
+  "main": "src/index.js", 
   "author": "{{cookiecutter.author}}",
   "license": "{{cookiecutter.license}}",
   "dependencies": {

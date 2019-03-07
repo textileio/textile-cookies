@@ -31,7 +31,7 @@ sudo apt-get install cookiecutter # Debian/Ubuntu
 To create a new Textile-based react project, simply call:
 
 ```sh
-cookiecutter gh:textileio/textile-react-cookie
+cookiecutter gh:textileio/textile-react-cookie --checkout react
 ```
 
 Then its simply a matter of:
