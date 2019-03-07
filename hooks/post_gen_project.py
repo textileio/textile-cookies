@@ -12,4 +12,4 @@ subprocess.call(
         'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.appname}}.git'
     ]
 )
-print("Git repo initialized!)
+print("Git repo initialized!")
