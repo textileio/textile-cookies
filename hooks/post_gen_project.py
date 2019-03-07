@@ -12,7 +12,4 @@ subprocess.call(
         'https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.appname}}.git'
     ]
 )
-print("Git repo initialized, consider running:")
-print("  cd {{cookiecutter.appname}}")
-print("  curl -sL https://www.gitignore.io/api/node > .gitignore")
-print("to add a useful .gitignore file!")
+print("Git repo initialized!)
