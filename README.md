@@ -39,7 +39,7 @@ Then its simply a matter of:
 ```sh
 cd appname
 yarn install
-yarn start
+yarn dev
 ```
 
 Now you can start editing the app code and making it your own. Check out the generated `README.md` file for details.
