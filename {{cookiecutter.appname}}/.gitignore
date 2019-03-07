@@ -85,3 +85,7 @@ typings/
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+
+# For electron development
+build/
+dist/
