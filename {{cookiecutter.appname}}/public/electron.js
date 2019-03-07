@@ -51,9 +51,12 @@ const createWindow = () => {
   }))
 
   if (isDev) {
-    const { default: installExtension, REACT_DEV_TOOLS } = require('electron-devtools-installer')
+    const {
+      default: installExtension,
+      REACT_DEVELOPER_TOOLS
+    } = require('electron-devtools-installer')
 
-    installExtension(REACT_DEV_TOOLS)
+    installExtension(REACT_DEVELOPER_TOOLS)
       .then(name => {
         console.log(`Added Extension: ${name}`)
       })
