@@ -1,9 +1,9 @@
 {
   "author": "Textile",
-  "title": "Textile React App",
-  "appname": "textile-react-app",
+  "title": "Textile Node App",
+  "appname": "textile-node-app",
   "version": "0.1.0",
-  "description": "A Textile React App with decentralized superpowers",
+  "description": "A Textile Node App with decentralized superpowers",
   "license": "MIT",
   "github_username": "textileio",
   "entry_point": "src/index.js"

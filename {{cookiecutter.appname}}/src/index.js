@@ -1,23 +1,37 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
-import Store from './Store'
-import * as serviceWorker from './serviceWorker'
-import { Provider } from 'mobx-react'
-import 'semantic-ui-css/semantic.min.css'
+const Textile = require('@textileio/js-http-client').Textile
+const FormData = require('form-data')
 
-const store = new Store()
+const key = 'BlobThreadKey'
 
-const app = (
-  <Provider store={store}>
-    <App />
-  </Provider>
-)
+const textile = new Textile({
+  url: 'http://127.0.0.1',
+  port: 40602
+})
 
-ReactDOM.render(app, document.getElementById('root'))
+async function run () {
+  let blobThread
+  const threads = await textile.threads.list()
+  for (const thread of threads.items) {
+    if (thread.key === key) {
+      blobThread = thread
+    }
+  }
+  if (!blobThread) {
+    const schemas = await textile.schemas.defaults()
+    const schema = await textile.schemas.add(schemas.blob)
+    blobThread = await textile.threads.add('Blobs Test', {
+      key,
+      type: 'public',
+      sharing: 'notshared',
+      schema
+    })
+  }
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister()
+  const form = new FormData()
+  form.append('file', Buffer.from('this is a test'), '/data')
+
+  const file = await textile.files.addFile(blobThread.id, form, 'caption')
+  console.log(file)
+}
+
+run()

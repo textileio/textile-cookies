@@ -34,7 +34,7 @@ To create a new Textile-based project, simply call:
 cookiecutter gh:textileio/textile-cookies
 ```
 
-By default, this will create a React app. You can also specify one of our templates directly via the `--checkout` flag (`react` or `electron`).
+By default, this will create a simple Node.js script. You can also specify one of our templates directly via the `--checkout` flag (`react` or `electron`).
 
 Then its simply a matter of:
 
