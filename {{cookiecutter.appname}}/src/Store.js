@@ -1,5 +1,5 @@
 import { observe, action, observable } from 'mobx'
-import { Textile } from '@textileio/js-http-client'
+import { Textile } from '@textile/js-http-client'
 import { toast } from 'react-semantic-toasts'
 
 const textile = new Textile({
