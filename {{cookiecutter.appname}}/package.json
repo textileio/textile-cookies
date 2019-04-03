@@ -6,7 +6,7 @@
   "author": "{{cookiecutter.author}}",
   "license": "{{cookiecutter.license}}",
   "dependencies": {
-    "@textile/js-http-client": "^0.2.5",
+    "@textile/js-http-client": "^0.2.6",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
     "moment": "^2.24.0",
