@@ -1,4 +1,4 @@
-const Textile = require('@textileio/js-http-client').Textile
+const Textile = require('@textile/js-http-client').Textile
 const FormData = require('form-data')
 
 const key = 'BlobThreadKey'
@@ -18,20 +18,28 @@ async function run () {
   }
   if (!blobThread) {
     const schemas = await textile.schemas.defaults()
-    const schema = await textile.schemas.add(schemas.blob)
-    blobThread = await textile.threads.add('Blobs Test', {
-      key,
-      type: 'public',
-      sharing: 'notshared',
-      schema
-    })
+    try {
+      const schema = await textile.schemas.add(schemas.blob)
+      blobThread = await textile.threads.add(
+        'Blobs Test',
+        schema.hash,
+        key,
+        'public',
+        'notshared'
+      )
+    } catch (err) {
+      console.log(err)
+    }
   }
+  try {
+    const form = new FormData()
+    form.append('file', Buffer.from('this is a test'), '/data')
 
-  const form = new FormData()
-  form.append('file', Buffer.from('this is a test'), '/data')
-
-  const file = await textile.files.addFile(blobThread.id, form, 'caption')
-  console.log(file)
+    const file = await textile.files.addFile(form, 'caption', blobThread.id)
+    console.log(file)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 run()
