@@ -12,8 +12,8 @@ class Store {
     observe(this, 'status', change => {
       if (change.newValue === 'online') {
         textile.profile.get().then(profile => {
-          if (!profile.username) {
-            profile.username = profile.address.slice(-8)
+          if (!profile.name) {
+            profile.name = profile.address.slice(-8)
           }
           this.profile = profile
         }).catch(err => {
